@@ -1,20 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet} from 'react-native';
+import { BackgroundGradient, Button, Text } from '@components'
+import { Colours, loadCustomFonts} from '@constants';
 
 export default function App() {
+  loadCustomFonts();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <BackgroundGradient>
+          <Text preset='descriptor'>laura is silly</Text>
+          <Button>Default Button</Button>
+          <StatusBar style="auto" />
+      </BackgroundGradient>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  
 });

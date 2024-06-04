@@ -22,6 +22,25 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Lato/Lato-Black.tff",
+            "./assets/fonts/Lato/Lato-BlackItalic.tff",
+            "./assets/fonts/Lato/Lato-Bold.tff",
+            "./assets/fonts/Lato/Lato-BoldItalic.tff",
+            "./assets/fonts/Lato/Lato-Italic.tff",
+            "./assets/fonts/Lato/Lato-Light.tff",
+            "./assets/fonts/Lato/Lato-LightItalic.tff",
+            "./assets/fonts/Lato/Lato-Regular.tff",
+            "./assets/fonts/Lato/Lato-Thin.tff",
+            "./assets/fonts/Lato/Lato-ThinItalic.tff"
+          ]
+        }
+      ]
+    ]
   }
 }
