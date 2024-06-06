@@ -9,7 +9,7 @@ export default function App() {
       <BackgroundGradient>
           <Text preset='descriptor'>laura is silly</Text>
           <Button>Default Button</Button>
-          <IconButton></IconButton>
+          <IconButton icon='Home'></IconButton>
           <StatusBar style="auto" />
       </BackgroundGradient>
   );

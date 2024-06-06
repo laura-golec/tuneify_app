@@ -1,35 +1,36 @@
-import React from 'react';
-import { StyleSheet, Pressable, ViewProps } from 'react-native';
-import { Icon, Icons } from '@constants'
-import { ColourValues, Colours, Size, Sizes } from '@constants';
+import React, { useState } from 'react';
+import { StyleSheet } from 'react-native';
+import { Button, ButtonProps } from './Button';
+import { Icon, Icons } from '@constants';
+import { Colours, ColourValues, Size, Sizes } from '@constants';
 
-type IconButtonProps = {
+interface IconButtonProps extends ButtonProps {
     icon?: Icon;
-    colour?: ColourValues;
     size?: Size;
-} & ViewProps;
-
-export function IconButton({ icon = 'Settings', colour = Colours.buttonText, size = 'extraLarge', ...props }: IconButtonProps) {
-    const IconComponent = Icons[icon];
-    return (
-        <Pressable onPress={() => console.debug('eurmmmm')} style={styles.default}>
-            <IconComponent width={Sizes[size]} height={Sizes[size]} fill={colour}/>
-        </Pressable>
-    );
+    onPress?: () => void;
 }
 
-// Define the styles for the component
-const styles = StyleSheet.create({
-    default: {
-        flex: 0,
-        overflow: 'hidden',
-        margin: 5,
-    },
-    special: {
-        flex: 0,
-        padding: 10,
-        borderRadius: 20,
-        backgroundColor: Colours.secondaryAccentColour,
-        overflow: 'hidden'
-    },
-});
+export const IconButton: React.FC<IconButtonProps> = ({ icon = 'Home', defaultColour = Colours.buttonText, activeColour = Colours.buttonTextMuted, size = 'extraLarge', ...buttonProps }) => {
+    const IconComponent = Icons[icon];
+    const [localColour, setLocalColour] = useState(defaultColour);
+
+    buttonProps.onPressIn = buttonProps.onPressIn ?? (() => setLocalColour(activeColour));
+    buttonProps.onPressOut = buttonProps.onPressOut ?? (() => setLocalColour(defaultColour));
+
+    const dynamicStyles = StyleSheet.create({
+        icon: {
+          flex: 0,
+        }
+      });
+
+    return (
+        <Button
+            {...buttonProps}
+            styleName={dynamicStyles.icon}
+            defaultColour={defaultColour}
+            activeColour={activeColour}
+        >
+            <IconComponent width={Sizes[size]} height={Sizes[size]} fill={localColour} />
+        </Button>
+    );
+}
