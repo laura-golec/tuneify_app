@@ -15,4 +15,5 @@
       ],
     },
   },
+  "include": ["./", "declarations.d.ts"]
 }

@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet} from 'react-native';
-import { BackgroundGradient, Button, Text } from '@components'
+import { BackgroundGradient, Button, Text, IconButton } from '@components'
 import { Colours, loadCustomFonts} from '@constants';
 
 export default function App() {
@@ -9,6 +9,7 @@ export default function App() {
       <BackgroundGradient>
           <Text preset='descriptor'>laura is silly</Text>
           <Button>Default Button</Button>
+          <IconButton></IconButton>
           <StatusBar style="auto" />
       </BackgroundGradient>
   );
