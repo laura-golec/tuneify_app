@@ -2,7 +2,7 @@ import { useFonts } from 'expo-font';
 
 
 export function Lato() {
-    const [fontsLoaded] = useFonts({
+    const [loaded, error] = useFonts({
         'LatoBlack': require('./Lato-Black.ttf'),
         'LatoBlackItalic': require('./Lato-BlackItalic.ttf'),
         'LatoBold': require('./Lato-Bold.ttf'),
@@ -14,4 +14,5 @@ export function Lato() {
         'LatoThin': require('./Lato-Thin.ttf'),
         'LatoThinItalic': require('./Lato-ThinItalic.ttf'),
     });
+    return [loaded, error]
 } 

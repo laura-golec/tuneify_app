@@ -82,6 +82,6 @@ export function Text({ children, ...props }: TextProps) {
     const fontVariant = weight + fontStyle;
     const fontFamilyValue = fontFamilyObject[fontVariant as keyof typeof FontVariants];
     return (
-        <ReactText style={[{ fontFamily: fontFamilyValue, fontSize: Sizes[size], color: colour }]}>{children}</ReactText>
+        <ReactText style={[{ fontFamily: fontFamilyValue, fontSize: Sizes[size], color: colour}]}>{children}</ReactText>
     );
 }

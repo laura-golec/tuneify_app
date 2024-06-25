@@ -3,35 +3,9 @@ import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Check, Continuous, Download,
 import { FC } from "react";
 import { SvgProps } from "react-native-svg";
 
-export type Icon = 'ArrowDown'
-    | 'ArrowLeft'
-    | 'ArrowRight'
-    | 'ArrowUp'
-    | 'Check'
-    | 'Continuous'
-    | 'Download'
-    | 'Downloaded'
-    | 'History'
-    | 'Home'
-    | 'Library'
-    | 'Loop'
-    | 'Menu'
-    | 'Next'
-    | 'Pause'
-    | 'Play'
-    | 'Previous'
-    | 'Repeat'
-    | 'Search'
-    | 'Sequential'
-    | 'Settings'
-    | 'Shuffle'
-    | 'X';
+export type Icon = keyof typeof Icons;
 
-type IconDict = {
-    [key in Icon]: FC<SvgProps>;
-};
-
-export const Icons: IconDict = {
+export const Icons = {
     'ArrowDown': ArrowDown,
     'ArrowLeft': ArrowLeft,
     'ArrowRight': ArrowRight,

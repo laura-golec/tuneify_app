@@ -19,8 +19,8 @@ export interface ButtonProps extends ViewProps {
 export const Button: React.FC<ButtonProps> = ({
   children,
   styleName = 'button',
-  defaultColour = Colours.accentColour,
-  activeColour = Colours.accentColourFocused,
+  defaultColour = Colours.primaryColour,
+  activeColour = Colours.primaryColourFocused,
   hitSlop = 5,
   onPressIn,
   onPressOut,
@@ -88,7 +88,7 @@ export const Button: React.FC<ButtonProps> = ({
       <Pressable
         onPressIn={mergedOnPressIn}
         onPressOut={mergedOnPressOut}
-        onPress={onPress}
+        onPress={() => onPress}
         hitSlop={hitSlop}
         {...props}
       >

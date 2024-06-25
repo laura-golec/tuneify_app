@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "scheme": "myapp",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -40,7 +41,8 @@
             "./assets/fonts/Lato/Lato-ThinItalic.tff"
           ]
         }
-      ]
+      ],
+      "expo-router"
     ]
   }
 }

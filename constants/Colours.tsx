@@ -36,19 +36,48 @@ const rgbToHex = (rgb: { r: number; g: number; b: number }) => {
   return `#${((1 << 24) + (rgb.r << 16) + (rgb.g << 8) + rgb.b).toString(16).slice(1)}`;
 };
 
-export const Colours = {
+const createColours = () => {
+  const Colours = {
     buttonColour: "#00000066",
-    buttonColourFocused: () => combineColors(Colours.buttonColour, Colours.focusOverlay, 0.60),
     buttonText: "#FFFFFF",
     buttonTextMuted: "#7F7F7F",
     backgroundColour: '#0F0F0F',
     backgroundGradient: '#999999',
     neutralBackground: "#E1E1E1",
-    accentColour: "#CF63BB",
-    secondaryAccentColour: "#3E1336",
-    accentColourFocused: () => combineColors(Colours.accentColour, Colours.focusOverlay, 0.30),
-    secondaryAccentColourFocused: () => combineColors(Colours.secondaryAccentColour, Colours.focusOverlay, 0.30),
+    primaryColour: "#CF63BB",
+    secondaryColour: "#3E1336",
+    accentColour: '#875EBA',
     focusOverlay: "#000000",
-  }
+    buttonColourFocused: "",
+    primaryColourFocused: "",
+    secondaryColourFocused: "",
+    accentColourFocused: "",
+  };
 
+  // Compute the focused colors
+  Colours.buttonColourFocused = combineColors(Colours.buttonColour, Colours.focusOverlay, 0.60);
+  Colours.primaryColourFocused = combineColors(Colours.primaryColour, Colours.focusOverlay, 0.30);
+  Colours.secondaryColourFocused = combineColors(Colours.secondaryColour, Colours.focusOverlay, 0.30);
+  Colours.accentColourFocused = combineColors(Colours.accentColour, Colours.focusOverlay, 0.30);
+
+  return Colours;
+};
+
+export const Colours = createColours();
  export type ColourValues = typeof Colours[keyof typeof Colours];
+
+ export const darkTheme = {
+    text: Colours.buttonText,
+    background: Colours.backgroundColour,
+    tint: Colours.buttonText,
+    tabIconDefault: Colours.buttonTextMuted,
+    tabIconSelected: Colours.buttonText,
+};
+
+  export const lightTheme = {
+      text: Colours.buttonText,
+      background: Colours.backgroundColour,
+      tint: Colours.buttonText,
+      tabIconDefault: Colours.buttonTextMuted,
+      tabIconSelected: Colours.buttonText,
+  };

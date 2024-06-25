@@ -1,16 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet} from 'react-native';
 import { BackgroundGradient, Button, Text, IconButton } from '@components'
 import { Colours, loadCustomFonts} from '@constants';
+import { Link, useRouter } from 'expo-router';
+import { registerRootComponent } from 'expo';
 
-export default function App() {
+const HomeScreen: React.FC = () => {
   loadCustomFonts();
+  const router = useRouter();
   return (
       <BackgroundGradient>
-          <Text preset='descriptor'>laura is silly</Text>
-          <Button>Default Button</Button>
-          <IconButton icon='Home'></IconButton>
-          <StatusBar style="auto" />
+          <Text preset='heading'>Tuneify</Text>
       </BackgroundGradient>
   );
 }
@@ -18,3 +17,7 @@ export default function App() {
 const styles = StyleSheet.create({
   
 });
+
+registerRootComponent(HomeScreen)
+
+export default HomeScreen;

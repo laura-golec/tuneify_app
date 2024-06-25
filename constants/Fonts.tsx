@@ -1,7 +1,8 @@
 import { Lato } from '@assets'
 
 export function loadCustomFonts() {
-    Lato()
+    const [loaded, error] = Lato()
+    return [loaded, error]
 }
 
 export const FontWeights = {

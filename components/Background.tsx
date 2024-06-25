@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
         backgroundColor: Colours.backgroundColour,
         alignItems: 'center',
         justifyContent: 'center',
-        color: Colours.buttonText
+        color: Colours.buttonText,
+        elevation: 0
     },
     gradient: {
         ...StyleSheet.absoluteFillObject,
@@ -38,6 +39,5 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-
     }
 });
